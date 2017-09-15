@@ -1,6 +1,7 @@
 import re
 import os
 import pandas as pd
+import argparse
 
 
 class Parser:
@@ -91,6 +92,10 @@ class Parser:
 
 
 if __name__ == '__main__':
-    p = Parser('./data/test_task_2_logs.log')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--path', nargs='?', type=str, help="path to log file to parse",
+                        default='./data/test_task_2_logs.log')
+    args = parser.parse_args()
+    p = Parser(args.path)
     p.show_rpm_for_all_transactions()
     p.show_top_n_popular_transactions(25)
