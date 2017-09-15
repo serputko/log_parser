@@ -95,7 +95,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--path', nargs='?', type=str, help="path to log file to parse",
                         default='./data/test_task_2_logs.log')
-    parser.add_argument('--nof', nargs='?', type=int, help="number of transactions to display",
+    parser.add_argument('--not', nargs='?', type=int, help="number of transactions to display",
                         default=25)
     args = parser.parse_args()
     p = Parser(args.path)
