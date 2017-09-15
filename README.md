@@ -1,6 +1,6 @@
 # log_parser
 To parse log execute next command:
-  python {project_dir}/bin/parse.py --path {path_to_logfile} --nof {number_of_transactions_to_display}
+  python {project_dir}/bin/parse.py --path {path_to_logfile} --not {number_of_transactions_to_display}
 
 Sample log is located in data/ directory
 Use python {project_dir}/bin/parse.py -h to get help
