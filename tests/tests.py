@@ -12,7 +12,7 @@ class TestLog(unittest.TestCase):
         dataframe = replace_dynamic_data(data)
         max_rpm_for_each_transaction = get_max_rpm_for_each_transaction(group_by_transactions(dataframe))
         self.assertEqual(max_rpm_for_each_transaction[transactions[0]], 6)
-        self.assertEqual(max_rpm_for_each_transaction[transactions[1]], 4)
+        self.assertEqual(max_rpm_for_each_transaction[transactions[1]], 3)
         self.assertEqual(max_rpm_for_each_transaction[transactions[2]], 5)
 
     def test_total_hits_each(self):
@@ -31,6 +31,12 @@ class TestLog(unittest.TestCase):
         dataframe = replace_dynamic_data(data)
         total_hits = get_total_hits(dataframe)
         self.assertEqual(total_hits, 16)
+
+    def test_max_rpm_for_all_transactions(self):
+        data = read_log('./tests/test_log.log')
+        dataframe = replace_dynamic_data(data)
+        max_rpm_for_all_transactions = get_max_rpm_for_all_transactions(dataframe)
+        self.assertEqual(max_rpm_for_all_transactions, 7)
 
 
 if __name__ == '__main__':
